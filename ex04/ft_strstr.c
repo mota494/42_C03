@@ -11,37 +11,37 @@
 /* ************************************************************************** */
 
 /*#include <stdio.h>
+#include <string.h>
 
 char	*ft_strstr(char *str, char *to_find);
 
 int	main(void)
 {
-	char test[] = "ABCDBAE";
-	char test2[] = "BC";
+	char test[] = "ABCDBJKDSHAJHDSJKADBAE";
+	char test2[] = "0";
 	
-	printf("%s", ft_strstr(test, test2));
+	printf("%s\n", ft_strstr(test, test2));
+	printf("%s", strstr(test, test2));
 	return (0);
 }*/
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
+	int	n;
 
 	i = 0;
-	while (*str)
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		if (*str == to_find[i])
+		n = 0;
+		while ((str[i + n] == to_find[n]) && str[i + n] != '\0')
 		{
-			while (*str == to_find[i])
-			{
-				if (to_find[i + 1] == '\0')
-				{
-					str--;
-					return (str);
-				}
-				i++;
-			}
+			if (to_find[n + 1] == '\0')
+				return (&str[i]);
+			n++;
 		}
-		str++;
+		i++;
 	}
 	return (0);
 }

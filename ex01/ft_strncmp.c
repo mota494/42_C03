@@ -17,8 +17,8 @@ int ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int main()
 {
-	char test[] = "ABCDE";
-	char test1[] = "ADBDE";
+	char test[] = "ASDASDASD";
+	char test1[] = "BSDAFDASU";
 	int size = 3;
 	printf("%d\n\n", strncmp(test, test1, size));
 	printf("%d", ft_strncmp(test,test1, size));
@@ -29,7 +29,9 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	cont;
 
 	cont = 0;
-	while (cont < n && s1[cont] == s2[cont])
+	if (n <= 0)
+		return (0);
+	while (cont < n - 1 && s1[cont] == s2[cont] && s1[cont] != '\0')
 		cont++;
 	return (s1[cont] - s2[cont]);
 }

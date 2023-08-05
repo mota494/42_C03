@@ -17,21 +17,20 @@ int ft_strcmp(char *s1, char *s2);
 
 int main()
 {
-	char test[] = "Poklsjdlkajklo";
-	char test1[] = "Poco";
+	char test[] = "";
+	char test1[] = "abcd";
 	
 	printf("%d\n\n", strcmp(test, test1));
 	printf("%d", ft_strcmp(test,test1));
 	
 	return (0);
 }*/
-
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	cont;
 
 	cont = 0;
-	while (s1[cont] == s2[cont])
+	while (s1[cont] == s2[cont] && s1[cont] != '\0' && s2[cont] != '\0')
 		cont++;
 	return (s1[cont] - s2[cont]);
 }

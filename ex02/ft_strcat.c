@@ -13,15 +13,12 @@
 /*#include <stdio.h>
 #include <string.h>
 
-char	*ft_strcat(char *dest, char *src);
+char *ft_strcat(char *dest, char *src);
 
-int	main(void)
+int main()
 {
-	char	test1[];
-	char	test2[];
-
-	test1[] = "ola";
-	test2[] = "hello";
+	char test1[] = "ola";
+	char test2[] = "hello";
 	printf("%s\n", ft_strcat(test1, test2));
 }*/
 char	*ft_strcat(char *dest, char *src)
@@ -31,13 +28,12 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	f = 0;
+	while (dest[i] != '\0')
+		i++;
 	while (src[f] != '\0')
 	{
-		if (dest[i] == '\0')
-		{
-			dest[i] = src[f];
-			f++;
-		}
+		dest[i] = src[f]; 
+		f++;
 		i++;
 	}
 	dest[i] = '\0';
