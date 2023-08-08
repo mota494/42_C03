@@ -54,7 +54,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		f++;
 		i++;
 	}
-	if (size < strl[1])
+	if (size < strl[0])
 		return (size + strl[1]);
 	else
 		return (strl[0] + strl[1]);
